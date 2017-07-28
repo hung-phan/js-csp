@@ -31,7 +31,7 @@ export const go = (f: Generator<any, any, any>) =>
   (done: Function) => {
     goroutine(function*() {
       try {
-        const ch = goroutine(f, []);
+        const ch = goroutine(f);
         yield take(ch);
         done();
       } catch (e) {
